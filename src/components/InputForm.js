@@ -14,7 +14,7 @@ class InputForm extends Component {
       <div>
         <form>
           <textarea
-          style={{width:200, height:300}}
+          style={{width:500, height:400}}
           type='text' 
           name={this.props.id} 
           value={this.props.value} 

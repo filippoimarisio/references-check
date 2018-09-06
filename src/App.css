@@ -2,27 +2,33 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
+.textareas{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.thesisInput {
+  grid-column-start: 1/2;
+  grid-row-start: 1/2;
+}
+
+.referencesInput {
+  grid-column-start: 2/3;
+  grid-row-start: 1/2;
+}
+
+.checkReferences{
+  margin-top: 20px;
+  width: 200px;
+  height: 30px;
+}
+
+.missingReferences {
+  margin-top: 30px;
 }

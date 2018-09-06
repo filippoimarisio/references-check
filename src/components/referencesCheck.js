@@ -1,5 +1,4 @@
 
-
 export const referencesCheck = (thesis, references) => {
 
   const splitReferences = references.split("\n")
