@@ -13,8 +13,8 @@ class MissinReferences extends Component {
           <ul>
             {this.props.missing.map(missingRef => {
               return (
-                <div>
-                  <li key={missingRef}>
+                <div key={missingRef}>
+                  <li>
                     {missingRef}
                   </li>
                   <br/>

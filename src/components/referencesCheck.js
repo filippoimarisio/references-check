@@ -3,6 +3,7 @@ export const referencesCheck = (thesis, references) => {
 
   const splitReferences = references.split("\n")
   const splitRef = splitReferences.map(reference => reference.split(/(\,|\.)/))
+  console.log(splitRef)
 
   const missingReferences = [] 
 
