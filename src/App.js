@@ -9,7 +9,8 @@ class App extends Component {
   state = {
     thesis : '',
     references : '',
-    missing : []
+    missing : [],
+    checked: false
   }
 
   handleInputChange = (name, value) => {
@@ -22,7 +23,10 @@ class App extends Component {
     const thesis = this.state.thesis
     const references = this.state.references
     const missingReferences = referencesCheck(thesis, references)
-    this.setState({ missing: missingReferences })
+    this.setState({ 
+      missing: missingReferences,
+      checked: true 
+    })
   }
 
   render() {
@@ -34,7 +38,7 @@ class App extends Component {
           <InputForm className='referencesInput' value={this.state.name} id='references' onChange={this.handleInputChange}/>
         </div>
         <button className='checkReferences' onClick={this.handleClick}>Check References </button>
-        <MissingReferences missing={this.state.missing}/>
+        <MissingReferences missing={this.state.missing} checked={this.state.checked}/>
       </div>
     );
   }

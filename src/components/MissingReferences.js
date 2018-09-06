@@ -5,22 +5,30 @@ class MissinReferences extends Component {
   render() {
     return (
       <div className='missingReferences'>
+      {this.props.missing.length > 0 && (
+        <div>
+          <h2>
+            These references are missing from the text body:
+          </h2>
+          <ul>
+            {this.props.missing.map(missingRef => {
+              return (
+                <div>
+                  <li key={missingRef}>
+                    {missingRef}
+                  </li>
+                  <br/>
+                </div>
+              )
+            })}
+          </ul>
+        </div>
+      )}
+      {this.props.missing.length === 0 && this.props.checked === true && (
         <h2>
-          These references are missing in the thesis
+          No reference missing!
         </h2>
-        <ul>
-        {this.props.missing.map(missingRef => {
-          return (
-            <div>
-              <li key={missingRef}>
-                {missingRef}
-              </li>
-              <br/>
-            </div>
-          )
-        })}
-
-        </ul>
+      )}
       </div>
     );
   }
