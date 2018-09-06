@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import InputForm from './components/InputForm'
 import {referencesCheck} from './components/referencesCheck'
+import MissingReferences from './components/MissingReferences'
 
 class App extends Component {
 
   state = {
     thesis : '',
-    references : ''
+    references : '',
+    missing : []
   }
 
   handleInputChange = (name, value) => {
@@ -16,11 +18,10 @@ class App extends Component {
   }
 
   handleClick = () => {
-
     const thesis = this.state.thesis
     const references = this.state.references
-    referencesCheck(thesis, references)
-
+    const missingReferences = referencesCheck(thesis, references)
+    this.setState({ missing: missingReferences })
   }
 
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
         <InputForm value={this.state.name} id='thesis' onChange={this.handleInputChange}/>
         <InputForm value={this.state.name} id='references' onChange={this.handleInputChange}/>
         <button onClick={this.handleClick}>Check References </button>
+        <MissingReferences missing={this.state.missing}/>
       </div>
     );
   }
